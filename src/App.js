@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Content from './components/Profile';
+import 'typeface-roboto';
+// import Icon from '@material-ui/core/Icon';
+
+import {Header, Footer} from './components/Layouts';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+          <Header/>
           <div>
-              <Content />
+              <Content/>
           </div>
+          <Footer/>
       </div>
     );
   }

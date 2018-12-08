@@ -1,41 +1,51 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class Article extends Component{
+class Article extends PureComponent{
     constructor(props) {
         super(props);
 
         this.state = {
-            isOpen: false
+            count: 0
         };
-
-        // this.handleClick = handleClick.bind(this);
     }
 
-    // state = {
-    //     isOpen: true
+    // componentWillReceiveProps(nextProps) {
+    //     if(nextProps.defaultOpen !== this.props.defaultOpen) this.setState({
+    //         isOpen: nextProps.defaultOpen
+    //     })
     // }
 
     render() {
-        const {contentdata} = this.props;
-        const body = this.state.isOpen && <section>{contentdata.text}</section>;
+
+        const {contentitemdata, isOpen, onButtonClick} = this.props;
+        const body = isOpen && <section>{contentitemdata.text}</section>;
+        console.log(isOpen);
         return (
             <div>
-                <h2>{contentdata.title}</h2>
-                <button onClick={this.handleClick}>
-                    {this.state.isOpen ? 'close' : 'open'}
+                <h2 onClick={this.changeCounter}>
+                    {contentitemdata.title}
+                    clicked {this.state.count}
+                </h2>
+                <button onClick={onButtonClick}>
+                    {isOpen ? 'close' : 'open'}
                 </button>
                 {body}
-                <h3>creation date: {(new Date(contentdata.date)).toDateString()}</h3>
+                <h3>creation date: {(new Date(contentitemdata.date)).toDateString()}</h3>
             </div>
         );
     }
 
-    handleClick = () => {
-        console.log('----', 'clicked');
+    changeCounter = () => {
         this.setState({
-            isOpen: !this.state.isOpen
+            count: this.state.count + 1
         })
-    }
+    };
+
+    // handleClick = () => {
+    //     this.setState({
+    //         isOpen: !this.state.isOpen
+    //     })
+    // };
 }
 
 export default Article;
