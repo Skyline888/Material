@@ -1,8 +1,11 @@
 import React from 'react';
-import logo from "../../logo.svg";
+import {AppBar, Toolbar, Typography} from '@material-ui/core/';
 
 export default props =>
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Header</p>
-    </header>
+    <AppBar position="static">
+        <Toolbar>
+            <Typography variant="headline" color="inherit">
+                Display 4
+            </Typography>
+        </Toolbar>
+    </AppBar>

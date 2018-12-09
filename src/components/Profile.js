@@ -13,7 +13,7 @@ class Content extends PureComponent {
 
 
     render() {
-        console.log('---', 1);
+        // console.log('---', 1);
         // const simpledatelist =  this.state.reverted ? simpledata.reverse() : simpledata;
         // console.log('----', 2, this.state, simpledata.map( simpledataitem =>  simpledataitem.id ));
         return (

@@ -18,7 +18,7 @@ class ArticleList extends PureComponent {
                 />
             </li>
         );
-        console.log(this.state.openArticlerId === contentdata.id, this.state.openArticlerId, contentdata.id);
+        // console.log(this.state.openArticlerId === contentdata.id, this.state.openArticlerId, contentdata.id);
         return (
             <ul>
                 { articaleElements }

@@ -19,7 +19,7 @@ class Article extends PureComponent{
 
         const {contentitemdata, isOpen, onButtonClick} = this.props;
         const body = isOpen && <section>{contentitemdata.text}</section>;
-        console.log(isOpen);
+        // console.log(isOpen);
         return (
             <div>
                 <h2 onClick={this.changeCounter}>
